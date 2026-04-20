@@ -9,20 +9,28 @@ data = pd.read_csv("final_data.csv")
 random.seed(45)
 np.random.seed(45)
 
+# =========================
 # Funnel Analysis
+# =========================
 
 funnel = data.groupby("event_type")["user_id"].nunique().reset_index()
 funnel.columns = ["event_type", "users"]
 
-print(funnel)      
+print(funnel)   
 
+# =========================
 # Extract values
+# =========================
+
 visit = funnel[funnel["event_type"] == "visit"]["users"].values[0]
 view = funnel[funnel["event_type"] == "view"]["users"].values[0]
 cart = funnel[funnel["event_type"] == "add_to_cart"]["users"].values[0]
 purchase = funnel[funnel["event_type"] == "purchase"]["users"].values[0]
 
+# =========================
 # Conversion rates
+# =========================
+
 visit_to_view = view / visit
 view_to_cart = cart / view
 cart_to_purchase = purchase / cart
@@ -36,6 +44,7 @@ print(f"Cart → Purchase: {cart_to_purchase:.2f}")
 # =========================
 # FUNNEL GRAPH
 # =========================
+
 import matplotlib.pyplot as plt
 
 stages = ["visit", "view", "add_to_cart", "purchase"]
@@ -47,14 +56,18 @@ plt.xlabel("Stage")
 plt.ylabel("Users")
 plt.show()
 
+# =========================
 # Funnel by device
+# =========================
 
 funnel_device = data.groupby(["device", "event_type"])["user_id"].nunique().reset_index()
 
 print("\nFunnel by Device:")
 print(funnel_device)
 
+# =========================
 # A/B Testing - Conversion by variant
+# =========================
 
 ab_test = data[data["event_type"] == "purchase"].groupby("variant")["user_id"].nunique().reset_index()
 
@@ -70,6 +83,7 @@ print(ab_test)
 # =========================
 # A/B TEST GRAPH
 # =========================
+
 ab_test.plot(x="variant", y="conversion_rate", kind="bar")
 plt.title("Conversion Rate by Variant")
 plt.ylabel("Conversion Rate")
