@@ -130,7 +130,11 @@ Visit → View → Add to Cart → Purchase
 ## Visualizations
 
 - Funnel graph (user drop-off across stages)
+- <img width="794" height="681" alt="image" src="https://github.com/user-attachments/assets/fb57d3b6-8516-487a-9f8d-663b15397795" />
+
 - A/B test bar chart (conversion comparison)
+- <img width="793" height="671" alt="image" src="https://github.com/user-attachments/assets/1eb927de-f8ed-4b7b-b486-ef278757aa3b" />
+
 
 ---
 
