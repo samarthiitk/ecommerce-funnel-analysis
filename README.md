@@ -135,13 +135,13 @@ Visit → View → Add to Cart → Purchase
 ---
 
 ## Project Structure
-├── data.py # Data generation + ETL
-├── analysis_sql.py # SQL pipeline using PostgreSQL
-├── analysis_python.py # Python analysis + visualization + stats
-├── users.csv
-├── events.csv
-├── experiments.csv
-├── final_data.csv
+├── data.py # Data generation + ETL```
+├── analysis_sql.py # SQL pipeline using PostgreSQL```
+├── analysis_python.py # Python analysis + visualization + stats```
+├── users.csv```
+├── events.csv```
+├── experiments.csv```
+├── final_data.csv```
 
 
 
